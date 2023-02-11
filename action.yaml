@@ -1,0 +1,12 @@
+name: 'Issue Body Parser'
+description: 'Allows for the automatic extraction of the body text from a specified issue within a repository.'
+inputs:
+  issue-id:
+    description: ID from the issue to extract the body
+    required: true
+outputs:
+  body:
+    description: Body parsed to JSON from MD
+runs:
+  using: node16
+  main: dist/index.js
