@@ -2,16 +2,16 @@
   "name": "body-snatcher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && ncc build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pedrocardoz0/body-snatcher.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pedro Cardozo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pedrocardoz0/body-snatcher/issues"
