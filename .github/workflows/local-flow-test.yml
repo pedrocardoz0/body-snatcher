@@ -1,0 +1,16 @@
+name: Local Test Action
+
+on: [push]
+
+jobs:
+  custom_test:
+    runs-on: ubuntu-latest
+    name: Local test with act
+    steps:
+      - name: Get Issue Body
+        uses: ./
+        id: parser
+        with:
+          issue-id: 150
+      - name: Get Issue Body
+        run: echo "${{ steps.parser.outputs.body }}"
