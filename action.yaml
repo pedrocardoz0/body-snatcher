@@ -4,7 +4,8 @@ inputs:
   issue-id:
     description: ID from the issue to extract the body
     required: true
-  github-token: Token to obtain the issue data
+  github-token: 
+    description: Token to obtain the issue data
     required: true
 outputs:
   body:
