@@ -38,23 +38,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 const github_1 = __importStar(__nccwpck_require__(5438));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const issue_number = core_1.default.getInput('issue-id', { required: true });
-        const token = core_1.default.getInput('github-token', { required: true });
+        const issue_number = Number(core.getInput('issue-id'));
+        const token = core.getInput('github-token');
         const body = yield collectIssueBody(token, issue_number);
-        core_1.default.setOutput('body', { name: 'hi!', body });
+        core.setOutput('body', { name: 'hi!', body });
     });
 }
-function collectIssueBody(token, issue_id) {
+function collectIssueBody(token, issue_number) {
     return __awaiter(this, void 0, void 0, function* () {
-        const issue_number = parseInt(issue_id);
         const octo = (0, github_1.getOctokit)(token);
         const { data } = yield octo.rest.issues.get(Object.assign(Object.assign({}, github_1.default.context.repo), { issue_number }));
         return data.body;

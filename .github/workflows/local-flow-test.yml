@@ -13,7 +13,6 @@ jobs:
         uses: ./
         id: parser
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-id: 150
       - name: Get Issue Body
         run: echo "${{ steps.parser.outputs.body }}"
