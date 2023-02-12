@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Local test with act
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Get Issue Body
         uses: ./
         id: parser
